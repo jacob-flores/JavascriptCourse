@@ -23,3 +23,21 @@ For example, Object.keys({ height: '20 feet' })  would return 'height'.
 You could then check to see if a given element in the array had a property equal to the criteria's
  value with something like element[property] === criteria[property]
 */
+
+var ladders = [
+      { id: 1, height: 20 },
+      { id: 3, height: 25 }
+  ];
+  
+  var ladder;
+  var param = {height: 25};
+  
+  function findWhere(whereToFind, valueToFind){
+      var property = Object.keys(valueToFind)[0];
+      return whereToFind.find(function(item){
+          return item[property] === valueToFind[property];
+      });
+  }
+  
+  ladder = findWhere(ladders, param);
+  console.log(ladder);
